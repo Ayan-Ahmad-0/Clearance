@@ -20,4 +20,5 @@ src/clearance/ingest/chunker.py
 src/clearance/ingest/embed.py
 src/clearance/ingest/loader.py
 src/clearance/retrieval/hybrid.py
+src/reference_resolver/__init__.py
 src/reference_resolver/resolver.py

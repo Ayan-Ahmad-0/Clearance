@@ -1,0 +1,10 @@
+[importlinter]
+root_packages =
+    clearance
+    reference_resolver
+
+[importlinter:contract:reference-isolation]
+name = Reference resolver imports nothing from the serving path
+type = forbidden
+source_modules = reference_resolver
+forbidden_modules = clearance

@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: clearance
+Version: 0.1.0
+Requires-Python: >=3.12
+Requires-Dist: psycopg[binary,pool]>=3.2
+Requires-Dist: fastapi>=0.115
+Requires-Dist: uvicorn>=0.30
+Requires-Dist: pydantic>=2.8
+Requires-Dist: sentence-transformers>=3.0
+Requires-Dist: psutil>=6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: hypothesis>=6.100; extra == "dev"
+Requires-Dist: ruff>=0.6; extra == "dev"
+Requires-Dist: import-linter>=2.0; extra == "dev"
+Requires-Dist: mutmut>=2.5; extra == "dev"

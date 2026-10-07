@@ -1,0 +1,79 @@
+{
+ "categories": [
+  {
+   "label": "injected",
+   "category": "override",
+   "n": 12,
+   "flagged": 12
+  },
+  {
+   "label": "injected",
+   "category": "role_spoof",
+   "n": 12,
+   "flagged": 12
+  },
+  {
+   "label": "injected",
+   "category": "exfiltration",
+   "n": 12,
+   "flagged": 12
+  },
+  {
+   "label": "injected",
+   "category": "link_exfil",
+   "n": 12,
+   "flagged": 12
+  },
+  {
+   "label": "injected",
+   "category": "delimiter_escape",
+   "n": 12,
+   "flagged": 12
+  },
+  {
+   "label": "injected",
+   "category": "zero_width",
+   "n": 12,
+   "flagged": 12
+  },
+  {
+   "label": "injected",
+   "category": "base64",
+   "n": 12,
+   "flagged": 12
+  },
+  {
+   "label": "injected",
+   "category": "paraphrased",
+   "n": 12,
+   "flagged": 0
+  },
+  {
+   "label": "injected",
+   "category": "other_language",
+   "n": 12,
+   "flagged": 0
+  },
+  {
+   "label": "benign",
+   "category": "keyword_overlap",
+   "n": 15,
+   "flagged": 0
+  },
+  {
+   "label": "benign",
+   "category": "quotes_attack",
+   "n": 15,
+   "flagged": 15
+  },
+  {
+   "label": "benign",
+   "category": "legit_markup",
+   "n": 15,
+   "flagged": 15
+  }
+ ],
+ "real_documents": 1800,
+ "real_documents_flagged": [],
+ "real_documents_flagged_count": 0
+}

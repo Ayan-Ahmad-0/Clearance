@@ -1,6 +1,7 @@
 services:
   db:
     image: pgvector/pgvector:pg16
+    shm_size: 1gb
     environment:
       POSTGRES_USER: clearance
       POSTGRES_PASSWORD: clearance

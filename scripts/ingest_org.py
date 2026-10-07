@@ -14,6 +14,7 @@ import psycopg
 
 from clearance.ingest.chunker import chunk
 from clearance.ingest.embedder import embed_passages, to_pgvector
+from clearance.ingest.scanner import scan
 
 
 def main():
@@ -25,11 +26,16 @@ def main():
         print("DATABASE_URL is not set (or pass --dsn)", file=sys.stderr)
         return 2
 
-    rows = []
+    rows, quarantined = [], []
     with Path(args.docs).open() as fh:
         for line in fh:
             doc = json.loads(line)
-            rows += [(doc["id"], i, c) for i, c in enumerate(chunk(doc["text"]))]
+            for i, c in enumerate(chunk(doc["text"])):
+                result = scan(c)
+                if result["flagged"]:
+                    quarantined.append({"doc_id": doc["id"], "ord": i, **result})
+                else:
+                    rows.append((doc["id"], i, c))
 
     started = time.perf_counter()
     vectors = embed_passages([r[2] for r in rows])
@@ -45,7 +51,11 @@ def main():
         conn.commit()
         conn.execute("ANALYZE chunks")
 
-    print(f"{len(rows)} chunks embedded in {embed_seconds}s and loaded")
+    Path("data/org/quarantine.jsonl").write_text(
+        "".join(json.dumps(q) + "\n" for q in quarantined)
+    )
+    print(f"{len(rows)} chunks embedded in {embed_seconds}s and loaded, "
+          f"{len(quarantined)} quarantined")
     return 0
 
 

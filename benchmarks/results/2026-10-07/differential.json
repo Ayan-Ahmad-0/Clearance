@@ -1,0 +1,10 @@
+{
+ "org_sha256": "d9843f11121ee06e79ddcf1d44e4a6120586b201ea101b7614824c992f8f2597",
+ "users": 400,
+ "documents": 1800,
+ "pairs_compared": 720000,
+ "allowed_pairs": 100036,
+ "mismatches": 0,
+ "first_mismatches": [],
+ "seconds": 2.7
+}

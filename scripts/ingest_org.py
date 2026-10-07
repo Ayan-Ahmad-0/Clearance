@@ -1,0 +1,53 @@
+"""Chunk, embed and load data/org/documents.jsonl into the chunks table.
+
+Run:  python scripts/ingest_org.py
+Replaces all existing chunks. Uses DATABASE_URL.
+"""
+import argparse
+import json
+import os
+import sys
+import time
+from pathlib import Path
+
+import psycopg
+
+from clearance.ingest.chunker import chunk
+from clearance.ingest.embedder import embed_passages, to_pgvector
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--docs", default="data/org/documents.jsonl")
+    parser.add_argument("--dsn", default=os.environ.get("DATABASE_URL"))
+    args = parser.parse_args()
+    if not args.dsn:
+        print("DATABASE_URL is not set (or pass --dsn)", file=sys.stderr)
+        return 2
+
+    rows = []
+    with Path(args.docs).open() as fh:
+        for line in fh:
+            doc = json.loads(line)
+            rows += [(doc["id"], i, c) for i, c in enumerate(chunk(doc["text"]))]
+
+    started = time.perf_counter()
+    vectors = embed_passages([r[2] for r in rows])
+    embed_seconds = round(time.perf_counter() - started, 1)
+
+    with psycopg.connect(args.dsn) as conn:
+        conn.execute("TRUNCATE chunks RESTART IDENTITY")
+        with conn.cursor() as cur:
+            cur.executemany(
+                "INSERT INTO chunks (doc_id, ord, text, embedding) VALUES (%s, %s, %s, %s::vector)",
+                [(d, o, t, to_pgvector(v)) for (d, o, t), v in zip(rows, vectors, strict=True)],
+            )
+        conn.commit()
+        conn.execute("ANALYZE chunks")
+
+    print(f"{len(rows)} chunks embedded in {embed_seconds}s and loaded")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -213,6 +213,39 @@ CREATE TABLE public.acl (
 
 
 --
+-- Name: chunks; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.chunks (
+    id bigint NOT NULL,
+    doc_id text NOT NULL,
+    ord integer NOT NULL,
+    text text NOT NULL,
+    embedding public.vector(384) NOT NULL,
+    tsv tsvector GENERATED ALWAYS AS (to_tsvector('english'::regconfig, text)) STORED
+);
+
+
+--
+-- Name: chunks_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.chunks_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: chunks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.chunks_id_seq OWNED BY public.chunks.id;
+
+
+--
 -- Name: membership; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -288,11 +321,34 @@ CREATE TABLE public.schema_migrations (
 
 
 --
+-- Name: chunks id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.chunks ALTER COLUMN id SET DEFAULT nextval('public.chunks_id_seq'::regclass);
+
+
+--
 -- Name: acl acl_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.acl
     ADD CONSTRAINT acl_pkey PRIMARY KEY (node_id, subject_id, effect);
+
+
+--
+-- Name: chunks chunks_doc_id_ord_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.chunks
+    ADD CONSTRAINT chunks_doc_id_ord_key UNIQUE (doc_id, ord);
+
+
+--
+-- Name: chunks chunks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.chunks
+    ADD CONSTRAINT chunks_pkey PRIMARY KEY (id);
 
 
 --
@@ -364,6 +420,20 @@ ALTER TABLE ONLY public.schema_migrations
 --
 
 CREATE INDEX acl_subject_idx ON public.acl USING btree (subject_id, effect);
+
+
+--
+-- Name: chunks_hnsw_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX chunks_hnsw_idx ON public.chunks USING hnsw (embedding public.vector_cosine_ops);
+
+
+--
+-- Name: chunks_tsv_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX chunks_tsv_idx ON public.chunks USING gin (tsv);
 
 
 --
@@ -489,6 +559,8 @@ INSERT INTO public.schema_migrations (version) VALUES
     ('20261007064855'),
     ('20261007065111'),
     ('20261007101245'),
+    ('20261007104824'),
     ('20261007130500'),
     ('20261007130600'),
-    ('20261007152000');
+    ('20261007152000'),
+    ('20261007155500');

@@ -18,3 +18,5 @@ bench-small:
 
 bench:
 	@echo "TODO: later phase"
+load-org:
+	python scripts/load_org.py --org data/org/org.json

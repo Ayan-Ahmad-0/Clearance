@@ -54,8 +54,8 @@ CASES = {
         make([("u1", "G1")], [("F1", "G1", "allow")],
              parents={"d1": "F2", "F2": "F1", "F1": None}), "d1", ALLOW),
     "12_deny_past_bound_still_applies": (
-        make([("u1", "G1")] + chain("u1", "H1", "H2", "H3", "H4", "H5"),
-             [("d1", "G1", "allow"), ("d1", "H5", "deny")]), "d1", DENY),
+        make([("u1", "G1")] + chain("u1", "GH1", "GH2", "GH3", "GH4", "GH5"),
+             [("d1", "G1", "allow"), ("d1", "GH5", "deny")]), "d1", DENY),
     "13_cycle_reaches_group": (
         make([("u1", "G1"), ("G1", "G2"), ("G2", "G1")],
              [("d1", "G2", "allow")]), "d1", ALLOW),
@@ -84,8 +84,8 @@ CASES = {
              [("d1", "G5", "allow")]),
         "d1", DENY),
     "24_deny_in_middle_of_deep_folders": (
-        make([("u1", "G1")], [("R", "G1", "allow"), ("F2", "G1", "deny")],
-             parents={"d1": "F3", "F3": "F2", "F2": "F1", "F1": "R", "R": None}),
+        make([("u1", "G1")], [("FR", "G1", "allow"), ("F2", "G1", "deny")],
+             parents={"d1": "F3", "F3": "F2", "F2": "F1", "F1": "FR", "FR": None}),
         "d1", DENY),
     "25_empty_graph": (make(), "d1", DENY),
 }
@@ -106,8 +106,8 @@ def test_17_rows_are_per_document():
 def test_20_deny_scoped_to_subtree():
     g = make(
         [("u1", "G1")],
-        [("R", "G1", "allow"), ("F1", "G1", "deny")],
-        parents={"d1": "F1", "F1": "R", "d2": "F2", "F2": "R", "R": None},
+        [("FR", "G1", "allow"), ("F1", "G1", "deny")],
+        parents={"d1": "F1", "F1": "FR", "d2": "F2", "F2": "FR", "FR": None},
     )
     assert decide(g, "u1", "d1") == DENY
     assert decide(g, "u1", "d2") == ALLOW

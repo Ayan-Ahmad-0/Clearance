@@ -1,0 +1,24 @@
+{
+ "user": "u024",
+ "checks": {
+  "deny_row": {
+   "doc": "d0000",
+   "visible_before": true,
+   "visible_after": false,
+   "commit_to_answer_ms": 27.6,
+   "passed": true
+  },
+  "membership_edge_removed": {
+   "removed_edge": [
+    "u024",
+    "G024"
+   ],
+   "documents_lost": 177,
+   "still_visible_in_search": [],
+   "avg_query_ms_after_commit": 34.2,
+   "passed": true
+  }
+ },
+ "organisation_restored": true,
+ "all_passed": true
+}

@@ -12,5 +12,13 @@
     "principals": 400,
     "groups": 60,
     "documents": 1800
+  },
+  "nist_sp800": {
+    "licence": "Not subject to US copyright (17 U.S.C. 105, US government work); may be subject to foreign copyright",
+    "licence_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+    "retrieved": "2026-10-07",
+    "documents": 7,
+    "pages": 1120,
+    "failed_urls": []
   }
 }

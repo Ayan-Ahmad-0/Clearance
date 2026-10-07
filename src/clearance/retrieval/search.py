@@ -77,7 +77,7 @@ fused AS (
 MODES = {"prefilter": _PREFILTER, "postfilter": _POSTFILTER}
 
 
-def search(conn, user, query, *, mode="prefilter", top=10, pool=50, ef_search=100):
+def search(conn, user, query, *, mode="prefilter", top=10, pool=50, ef_search=400):
     """Return up to `top` chunks the user may read, best first."""
     params = {
         "user": user,

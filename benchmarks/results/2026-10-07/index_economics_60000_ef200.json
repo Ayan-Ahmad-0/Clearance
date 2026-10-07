@@ -1,0 +1,131 @@
+{
+ "chunks": 60000,
+ "index": {
+  "index_mb": 117.2,
+  "table_mb": 96.0
+ },
+ "queries": 77,
+ "ef_search": 200,
+ "rows": [
+  {
+   "persona": "administrator",
+   "docs_visible": 1800,
+   "arm": "exact_scan",
+   "p50_ms": 939.7,
+   "p95_ms": 1107.4,
+   "recall_vs_exact": null,
+   "avg_returned": 10,
+   "uses_hnsw_index": false
+  },
+  {
+   "persona": "administrator",
+   "docs_visible": 1800,
+   "arm": "hnsw_prefilter",
+   "p50_ms": 46.7,
+   "p95_ms": 50.1,
+   "recall_vs_exact": 0.943,
+   "avg_returned": 10,
+   "uses_hnsw_index": true
+  },
+  {
+   "persona": "administrator",
+   "docs_visible": 1800,
+   "arm": "hnsw_postfilter",
+   "p50_ms": 47.1,
+   "p95_ms": 49.9,
+   "recall_vs_exact": 0.943,
+   "avg_returned": 10,
+   "uses_hnsw_index": true
+  },
+  {
+   "persona": "new_joiner",
+   "docs_visible": 18,
+   "arm": "exact_scan",
+   "p50_ms": 34.3,
+   "p95_ms": 42.6,
+   "recall_vs_exact": null,
+   "avg_returned": 10,
+   "uses_hnsw_index": false
+  },
+  {
+   "persona": "new_joiner",
+   "docs_visible": 18,
+   "arm": "hnsw_prefilter",
+   "p50_ms": 12.7,
+   "p95_ms": 49.1,
+   "recall_vs_exact": 0.997,
+   "avg_returned": 10,
+   "uses_hnsw_index": true
+  },
+  {
+   "persona": "new_joiner",
+   "docs_visible": 18,
+   "arm": "hnsw_postfilter",
+   "p50_ms": 1.9,
+   "p95_ms": 2.5,
+   "recall_vs_exact": 0.039,
+   "avg_returned": 0.2,
+   "uses_hnsw_index": true
+  },
+  {
+   "persona": "junior",
+   "docs_visible": 78,
+   "arm": "exact_scan",
+   "p50_ms": 96.8,
+   "p95_ms": 126.6,
+   "recall_vs_exact": null,
+   "avg_returned": 10,
+   "uses_hnsw_index": false
+  },
+  {
+   "persona": "junior",
+   "docs_visible": 78,
+   "arm": "hnsw_prefilter",
+   "p50_ms": 8.9,
+   "p95_ms": 17.4,
+   "recall_vs_exact": 0.873,
+   "avg_returned": 10,
+   "uses_hnsw_index": true
+  },
+  {
+   "persona": "junior",
+   "docs_visible": 78,
+   "arm": "hnsw_postfilter",
+   "p50_ms": 2.6,
+   "p95_ms": 3.3,
+   "recall_vs_exact": 0.225,
+   "avg_returned": 2.5,
+   "uses_hnsw_index": true
+  },
+  {
+   "persona": "mid_visibility",
+   "docs_visible": 195,
+   "arm": "exact_scan",
+   "p50_ms": 205.5,
+   "p95_ms": 241.6,
+   "recall_vs_exact": null,
+   "avg_returned": 10,
+   "uses_hnsw_index": false
+  },
+  {
+   "persona": "mid_visibility",
+   "docs_visible": 195,
+   "arm": "hnsw_prefilter",
+   "p50_ms": 7.1,
+   "p95_ms": 10.2,
+   "recall_vs_exact": 0.759,
+   "avg_returned": 10,
+   "uses_hnsw_index": true
+  },
+  {
+   "persona": "mid_visibility",
+   "docs_visible": 195,
+   "arm": "hnsw_postfilter",
+   "p50_ms": 2.9,
+   "p95_ms": 3.7,
+   "recall_vs_exact": 0.229,
+   "avg_returned": 2.6,
+   "uses_hnsw_index": true
+  }
+ ]
+}

@@ -4,6 +4,7 @@ uvicorn>=0.30
 pydantic>=2.8
 sentence-transformers>=3.0
 psutil>=6.0
+pypdf>=4.0
 
 [dev]
 pytest>=8

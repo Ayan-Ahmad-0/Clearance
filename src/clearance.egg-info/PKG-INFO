@@ -8,6 +8,7 @@ Requires-Dist: uvicorn>=0.30
 Requires-Dist: pydantic>=2.8
 Requires-Dist: sentence-transformers>=3.0
 Requires-Dist: psutil>=6.0
+Requires-Dist: pypdf>=4.0
 Provides-Extra: dev
 Requires-Dist: pytest>=8; extra == "dev"
 Requires-Dist: hypothesis>=6.100; extra == "dev"

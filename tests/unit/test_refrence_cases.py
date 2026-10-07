@@ -71,6 +71,23 @@ CASES = {
              [("d1", "G5", "allow")]), "d1", ALLOW),
     "19_same_node_conflict": (
         make([("u1", "G1")], [("d1", "G1", "allow"), ("d1", "G1", "deny")]), "d1", DENY),
+    "21_two_allow_paths_one_deny": (
+        make([("u1", "G1"), ("u1", "G2"), ("u1", "G3")],
+             [("d1", "G1", "allow"), ("d1", "G2", "allow"), ("d1", "G3", "deny")]),
+        "d1", DENY),
+    "22_user_deny_beats_group_folder_allow": (
+        make([("u1", "G1")], [("F1", "G1", "allow"), ("d1", "u1", "deny")],
+             parents={"d1": "F1", "F1": None}),
+        "d1", DENY),
+    "23_over_bound_chain_with_cycle": (
+        make(chain("u1", "G1", "G2", "G3", "G4", "G5") + [("G5", "G3")],
+             [("d1", "G5", "allow")]),
+        "d1", DENY),
+    "24_deny_in_middle_of_deep_folders": (
+        make([("u1", "G1")], [("R", "G1", "allow"), ("F2", "G1", "deny")],
+             parents={"d1": "F3", "F3": "F2", "F2": "F1", "F1": "R", "R": None}),
+        "d1", DENY),
+    "25_empty_graph": (make(), "d1", DENY),
 }
 
 
@@ -119,3 +136,7 @@ def test_folder_tree_cycle_is_rejected():
     g = make(acl=[("d1", "u1", "allow")], parents={"d1": "F1", "F1": "F2", "F2": "F1"})
     with pytest.raises(InvalidSnapshot):
         decide(g, "u1", "d1")
+
+
+def test_25_empty_graph_authorises_nothing():
+    assert authorised(make(), "u1") == set()

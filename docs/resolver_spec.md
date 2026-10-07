@@ -17,7 +17,7 @@ clock, no cache and no side effects.
   folders, `d*` for documents. Every node has at most one parent folder. A root folder
   has no parent.
 - Ids are unique across all namespaces.
-
+- A node is a document if and only if its id starts with d. Folders start with F, groups with G, users with u.
 ## 3. Input snapshot
 
 ```python

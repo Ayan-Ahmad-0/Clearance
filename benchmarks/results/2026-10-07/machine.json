@@ -4,7 +4,7 @@
   "cpu_cores_physical": 4,
   "cpu_cores_logical": 8,
   "ram_gb": 15.7,
-  "disk_free_gb": 89.6,
+  "disk_free_gb": 88.7,
   "python": "3.13.5",
-  "git_sha": "9f985fa0ff1700e17b2ed1e3cbe8ba3e48289f92"
+  "git_sha": "9ba90eff0728a0e32c8c6416f2aa43a01e2cc5aa"
 }

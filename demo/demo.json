@@ -1,0 +1,1550 @@
+{
+ "meta": {
+  "built": "2026-10-08",
+  "model": "gemini-3.1-flash-lite",
+  "chunks": 4099,
+  "runs": 48,
+  "leaks": 0,
+  "tokens_in": 53355,
+  "tokens_out": 1802
+ },
+ "personas": {
+  "administrator": {
+   "label": "Administrator (sees everything)",
+   "documents": 1807,
+   "chunks": 4099
+  },
+  "security_analyst": {
+   "label": "Security analyst",
+   "documents": 213,
+   "chunks": 2505
+  },
+  "compliance_analyst": {
+   "label": "Compliance analyst (legal)",
+   "documents": 547,
+   "chunks": 1108
+  },
+  "mid_visibility": {
+   "label": "Mid-visibility staff (no NIST access)",
+   "documents": 195,
+   "chunks": 195
+  }
+ },
+ "questions": [
+  {
+   "id": "q1",
+   "text": "How many control families does the security and privacy controls catalog define?"
+  },
+  {
+   "id": "q2",
+   "text": "What are the phases of the incident response life cycle?"
+  },
+  {
+   "id": "q3",
+   "text": "What are the steps of the risk management framework?"
+  },
+  {
+   "id": "q4",
+   "text": "What are the three assurance levels in the digital identity guidelines?"
+  },
+  {
+   "id": "q5",
+   "text": "How many families of security requirements are defined for protecting controlled unclassified information?"
+  },
+  {
+   "id": "q6",
+   "text": "What is the purpose of information security continuous monitoring?"
+  }
+ ],
+ "scorecard": [
+  [
+   "administrator",
+   1800,
+   1.0,
+   1.0,
+   10.0
+  ],
+  [
+   "new_joiner",
+   18,
+   1.0,
+   0.696,
+   0.8
+  ],
+  [
+   "junior",
+   78,
+   1.0,
+   0.557,
+   2.83
+  ],
+  [
+   "mid_visibility",
+   195,
+   1.0,
+   0.573,
+   5.7
+  ]
+ ],
+ "runs": {
+  "administrator|q1": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The security and privacy controls are organized into 20 families.",
+    "citations": [
+     "d1800"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "particular controls within the SDLC. 2.2 CONTROL STRUCTURE AND ORGANIZATION Security and privacy controls described in this publication have a well-defined organization and structure. For ease of use in the security and privacy control sele"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "selection and implementation of the base control. The families are arranged in alphabetical order, while the controls and control enhancements within each family are in numerical order. The order of the families, controls, and control enhan"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "families includes information system, system component, and system service development and the associated developers whether the development is conducted internally by organizations or externally through the contracting and acquisition proc"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "are designed to facilitate risk management and compliance with applicable federal laws, executive orders, directives, regulations, policies, and standards. With few exceptions, the security and privacy controls in the catalog are policy-, t"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "the controls are organized in the consolidated catalog, control implementation approaches, the relationship between security and privacy controls, and trustworthiness and assurance. • Chapter Three provides a consolidated catalog of securit"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The security and privacy controls are organized into 20 families.",
+    "citations": [
+     "d1800"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "particular controls within the SDLC. 2.2 CONTROL STRUCTURE AND ORGANIZATION Security and privacy controls described in this publication have a well-defined organization and structure. For ease of use in the security and privacy control sele"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "selection and implementation of the base control. The families are arranged in alphabetical order, while the controls and control enhancements within each family are in numerical order. The order of the families, controls, and control enhan"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "families includes information system, system component, and system service development and the associated developers whether the development is conducted internally by organizations or externally through the contracting and acquisition proc"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "are designed to facilitate risk management and compliance with applicable federal laws, executive orders, directives, regulations, policies, and standards. With few exceptions, the security and privacy controls in the catalog are policy-, t"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "the controls are organized in the consolidated catalog, control implementation approaches, the relationship between security and privacy controls, and trustworthiness and assurance. • Chapter Three provides a consolidated catalog of securit"
+     }
+    ]
+   }
+  },
+  "administrator|q2": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The major phases of the incident response life cycle are preparation, detection and analysis, containment, eradication and recovery, and post-incident activity.",
+    "citations": [
+     "d1806"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "will inevitably persist after controls are implemented. Detection of security breaches is thus necessary to alert the organization whenever incidents occur. In keeping with the severity of the incident, the organization can mitigate the imp"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "rulesets, boundary router access control lists). Higher levels of system logging or network monitoring are often part of the recovery process. Once a resource is successfully attacked, it is often attacked again, or other resources within t"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "collaborate with their peers during any phase of the incident handling life cycle. The organizations participating in this type of relationship are usually peers without any authority over each other and choose to share information, pool re"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "and system-level continuous monitoring strategy; security and privacy plans; Cybersecurity Framework Profile. Expected Outputs: Security and privacy posture reports.109 Primary Responsibility: System Owner; Common Control Provider; Senior A"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "with those parties before incidents occur to ensure that all parties know their roles and that effective lines of communication are established. Figure 4-1 provides a sample view into an organization performing coordination at every phase o"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The major phases of the incident response life cycle are preparation, detection and analysis, containment, eradication and recovery, and post-incident activity.",
+    "citations": [
+     "d1806"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "will inevitably persist after controls are implemented. Detection of security breaches is thus necessary to alert the organization whenever incidents occur. In keeping with the severity of the incident, the organization can mitigate the imp"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "rulesets, boundary router access control lists). Higher levels of system logging or network monitoring are often part of the recovery process. Once a resource is successfully attacked, it is often attacked again, or other resources within t"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "collaborate with their peers during any phase of the incident handling life cycle. The organizations participating in this type of relationship are usually peers without any authority over each other and choose to share information, pool re"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "and system-level continuous monitoring strategy; security and privacy plans; Cybersecurity Framework Profile. Expected Outputs: Security and privacy posture reports.109 Primary Responsibility: System Owner; Common Control Provider; Senior A"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "with those parties before incidents occur to ensure that all parties know their roles and that effective lines of communication are established. Figure 4-1 provides a sample view into an organization performing coordination at every phase o"
+     }
+    ]
+   }
+  },
+  "administrator|q3": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The Risk Management Framework (RMF) consists of seven steps: Prepare, Categorize, Select, Implement, Assess, Authorize, and Monitor.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "RISK MANAGEMENT FRAMEWORK STEPS AND STRUCTURE There are seven steps in the RMF; a preparatory step to ensure that organizations are ready to execute the process and six main steps. All seven steps are essential for the successful execution "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "to include assessing control effectiveness, documenting changes to the system and environment of operation, conducting risk assessments and impact analyses, and reporting the security and privacy posture of the system. Figure 2 illustrates "
+     },
+     {
+      "doc_id": "d1804",
+      "title": "NIST SP 800-30 Rev 1: Guide for Conducting Risk Assessments",
+      "snippet": "the systems as evaluated. Risk assessment results at Tier 3 are communicated to organizational entities at Tier 1 and Tier 2. Risk assessment activities can be integrated with the steps in the Risk Management Framework (RMF), as defined in "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "gap analysis to ensure that the risk is accept able, documenting decisions, notifying stakeholders, and approval from the Authorizing Official (or other relevant decision maker). CHAPTER TWO PAGE 11 management levels—that is, some of the ou"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The Risk Management Framework (RMF) consists of seven steps: Prepare, Categorize, Select, Implement, Assess, Authorize, and Monitor.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "RISK MANAGEMENT FRAMEWORK STEPS AND STRUCTURE There are seven steps in the RMF; a preparatory step to ensure that organizations are ready to execute the process and six main steps. All seven steps are essential for the successful execution "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "to include assessing control effectiveness, documenting changes to the system and environment of operation, conducting risk assessments and impact analyses, and reporting the security and privacy posture of the system. Figure 2 illustrates "
+     },
+     {
+      "doc_id": "d1804",
+      "title": "NIST SP 800-30 Rev 1: Guide for Conducting Risk Assessments",
+      "snippet": "the systems as evaluated. Risk assessment results at Tier 3 are communicated to organizational entities at Tier 1 and Tier 2. Risk assessment activities can be integrated with the steps in the Risk Management Framework (RMF), as defined in "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "gap analysis to ensure that the risk is accept able, documenting decisions, notifying stakeholders, and approval from the Authorizing Official (or other relevant decision maker). CHAPTER TWO PAGE 11 management levels—that is, some of the ou"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   }
+  },
+  "administrator|q4": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The three components of identity assurance are Identity Assurance Level (IAL), which refers to the identity proofing process; Authenticator Assurance Level (AAL), which refers to the authentication process; and Federation Assurance Level (FAL), which refers to the assertion protocol used in a federated environment.",
+    "citations": [
+     "d1805"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "a requirement, and agencies should not assume they will be the same in any given system or application. The components of identity assurance detailed in these guidelines are as follows: • IAL refers to the identity proofing process. • AAL r"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "in a normative statement in these guidelines, they are CAPITALIZED for ease of identification. For example, SHALL is used to denote a mandatory requirement, while SHOULD refers to a technique, technology, or process that is recommended but "
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "are applicable, successfully authenticating provides reasonable risk-based assurances that the subject accessing the service today is the same as that which accessed the service previously. Digital identity presents a technical challenge be"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "and federation (if applicable); and determined the processes and technologies they will employ to meet each assurance level, agencies SHALL develop a “Digital Identity Acceptance Statement”, in accordance with SP 800- 53 IA-1 a.1. See Secti"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "match). To minimize the risk of compatibility errors, a reference to the base document (i.e., SP 800-63 rather than SP 800-63-3) always refers to the current version of the document. The following table states which sections of this volume "
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The three components of identity assurance are Identity Assurance Level (IAL), which refers to the identity proofing process; Authenticator Assurance Level (AAL), which refers to the authentication process; and Federation Assurance Level (FAL), which refers to the assertion protocol used in a federated environment.",
+    "citations": [
+     "d1805"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "a requirement, and agencies should not assume they will be the same in any given system or application. The components of identity assurance detailed in these guidelines are as follows: • IAL refers to the identity proofing process. • AAL r"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "in a normative statement in these guidelines, they are CAPITALIZED for ease of identification. For example, SHALL is used to denote a mandatory requirement, while SHOULD refers to a technique, technology, or process that is recommended but "
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "are applicable, successfully authenticating provides reasonable risk-based assurances that the subject accessing the service today is the same as that which accessed the service previously. Digital identity presents a technical challenge be"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "and federation (if applicable); and determined the processes and technologies they will employ to meet each assurance level, agencies SHALL develop a “Digital Identity Acceptance Statement”, in accordance with SP 800- 53 IA-1 a.1. See Secti"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "match). To minimize the risk of compatibility errors, a reference to the base document (i.e., SP 800-63 rather than SP 800-63-3) always refers to the current version of the document. The following table states which sections of this volume "
+     }
+    ]
+   }
+  },
+  "administrator|q5": {
+   "prefilter": {
+    "refused": false,
+    "answer": "There are fourteen families of recommended security requirements for protecting the confidentiality of CUI in nonfederal systems and organizations.",
+    "citations": [
+     "d1801"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "Protect the confidentiality of backup CUI at storage locations. For ease of use, the security requirements are organized into fourteen families. Each family contains the requirements related to the general security topic of the family. The "
+     },
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "or sections from the document. NARA policy and guidance control sanitization processes for controlled unclassified information. [SP 800-88] provides guidance on media sanitization. CHAPTER THREE PAGE 9 CHAPTER THREE THE REQUIREMENTS SECURIT"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "ensure that requirements for the protection of controlled unclassified information that is processed, stored or transmitted on external systems, are implemented in accordance with applicable laws, executive orders, directives, policies, reg"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "particular controls within the SDLC. 2.2 CONTROL STRUCTURE AND ORGANIZATION Security and privacy controls described in this publication have a well-defined organization and structure. For ease of use in the security and privacy control sele"
+     },
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "or using or operating a system on behalf of an agency; and where there are no specific safeguarding requirements for protecting the confidentiality of CUI prescribed by the authorizing law, regulation, or governmentwide policy for the CUI c"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "There are fourteen families of recommended security requirements for protecting the confidentiality of CUI in nonfederal systems and organizations.",
+    "citations": [
+     "d1801"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "Protect the confidentiality of backup CUI at storage locations. For ease of use, the security requirements are organized into fourteen families. Each family contains the requirements related to the general security topic of the family. The "
+     },
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "or sections from the document. NARA policy and guidance control sanitization processes for controlled unclassified information. [SP 800-88] provides guidance on media sanitization. CHAPTER THREE PAGE 9 CHAPTER THREE THE REQUIREMENTS SECURIT"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "ensure that requirements for the protection of controlled unclassified information that is processed, stored or transmitted on external systems, are implemented in accordance with applicable laws, executive orders, directives, policies, reg"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "particular controls within the SDLC. 2.2 CONTROL STRUCTURE AND ORGANIZATION Security and privacy controls described in this publication have a well-defined organization and structure. For ease of use in the security and privacy control sele"
+     },
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "or using or operating a system on behalf of an agency; and where there are no specific safeguarding requirements for protecting the confidentiality of CUI prescribed by the authorizing law, regulation, or governmentwide policy for the CUI c"
+     }
+    ]
+   }
+  },
+  "administrator|q6": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The purpose of the Monitor step, which includes continuous monitoring activities, is to maintain ongoing situational awareness regarding the security and privacy posture of an information system and the organization to support risk management decisions.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "continuous monitoring activities. [Cybersecurity Framework: RS.IM] TASK M-5 SECURITY AND PRIVACY REPORTING • A process is in place to report the security and privacy posture to the authorizing official and other senior leaders and executive"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "privacy posture of the system. Ready access to the current security and privacy posture supports continuous monitoring and ongoing authorization and promotes the near real-time management of risk to organizational operations and assets, ind"
+     },
+     {
+      "doc_id": "d1803",
+      "title": "NIST SP 800-137: Continuous Monitoring",
+      "snippet": "status metrics, and monitoring and assessment frequencies change in accordance with the needs of the organization. The continuous monitoring strategy is reviewed to ensure that it sufficiently supports the organization in operating within a"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "new authorization decision.152 The security and privacy information generated through the continuous monitoring process is provided to the authorizing officials and other organizational officials in a timely manner through security and priv"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The purpose of the Monitor step, which includes continuous monitoring activities, is to maintain ongoing situational awareness regarding the security and privacy posture of an information system and the organization to support risk management decisions.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "continuous monitoring activities. [Cybersecurity Framework: RS.IM] TASK M-5 SECURITY AND PRIVACY REPORTING • A process is in place to report the security and privacy posture to the authorizing official and other senior leaders and executive"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "privacy posture of the system. Ready access to the current security and privacy posture supports continuous monitoring and ongoing authorization and promotes the near real-time management of risk to organizational operations and assets, ind"
+     },
+     {
+      "doc_id": "d1803",
+      "title": "NIST SP 800-137: Continuous Monitoring",
+      "snippet": "status metrics, and monitoring and assessment frequencies change in accordance with the needs of the organization. The continuous monitoring strategy is reviewed to ensure that it sufficiently supports the organization in operating within a"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "new authorization decision.152 The security and privacy information generated through the continuous monitoring process is provided to the authorizing officials and other organizational officials in a timely manner through security and priv"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   }
+  },
+  "security_analyst|q1": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The security and privacy controls are organized into 20 families.",
+    "citations": [
+     "d1800"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "particular controls within the SDLC. 2.2 CONTROL STRUCTURE AND ORGANIZATION Security and privacy controls described in this publication have a well-defined organization and structure. For ease of use in the security and privacy control sele"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "selection and implementation of the base control. The families are arranged in alphabetical order, while the controls and control enhancements within each family are in numerical order. The order of the families, controls, and control enhan"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "families includes information system, system component, and system service development and the associated developers whether the development is conducted internally by organizations or externally through the contracting and acquisition proc"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "are designed to facilitate risk management and compliance with applicable federal laws, executive orders, directives, regulations, policies, and standards. With few exceptions, the security and privacy controls in the catalog are policy-, t"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "the controls are organized in the consolidated catalog, control implementation approaches, the relationship between security and privacy controls, and trustworthiness and assurance. • Chapter Three provides a consolidated catalog of securit"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The security and privacy controls are organized into 20 families.",
+    "citations": [
+     "d1800"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "particular controls within the SDLC. 2.2 CONTROL STRUCTURE AND ORGANIZATION Security and privacy controls described in this publication have a well-defined organization and structure. For ease of use in the security and privacy control sele"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "selection and implementation of the base control. The families are arranged in alphabetical order, while the controls and control enhancements within each family are in numerical order. The order of the families, controls, and control enhan"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "families includes information system, system component, and system service development and the associated developers whether the development is conducted internally by organizations or externally through the contracting and acquisition proc"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "are designed to facilitate risk management and compliance with applicable federal laws, executive orders, directives, regulations, policies, and standards. With few exceptions, the security and privacy controls in the catalog are policy-, t"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "the controls are organized in the consolidated catalog, control implementation approaches, the relationship between security and privacy controls, and trustworthiness and assurance. • Chapter Three provides a consolidated catalog of securit"
+     }
+    ]
+   }
+  },
+  "security_analyst|q2": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The major phases of the incident response life cycle are preparation, detection and analysis, containment, eradication and recovery, and post-incident activity.",
+    "citations": [
+     "d1806"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "will inevitably persist after controls are implemented. Detection of security breaches is thus necessary to alert the organization whenever incidents occur. In keeping with the severity of the incident, the organization can mitigate the imp"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "rulesets, boundary router access control lists). Higher levels of system logging or network monitoring are often part of the recovery process. Once a resource is successfully attacked, it is often attacked again, or other resources within t"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "collaborate with their peers during any phase of the incident handling life cycle. The organizations participating in this type of relationship are usually peers without any authority over each other and choose to share information, pool re"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "and system-level continuous monitoring strategy; security and privacy plans; Cybersecurity Framework Profile. Expected Outputs: Security and privacy posture reports.109 Primary Responsibility: System Owner; Common Control Provider; Senior A"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "with those parties before incidents occur to ensure that all parties know their roles and that effective lines of communication are established. Figure 4-1 provides a sample view into an organization performing coordination at every phase o"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The major phases of the incident response life cycle are preparation, detection and analysis, containment, eradication and recovery, and post-incident activity.",
+    "citations": [
+     "d1806"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "will inevitably persist after controls are implemented. Detection of security breaches is thus necessary to alert the organization whenever incidents occur. In keeping with the severity of the incident, the organization can mitigate the imp"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "rulesets, boundary router access control lists). Higher levels of system logging or network monitoring are often part of the recovery process. Once a resource is successfully attacked, it is often attacked again, or other resources within t"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "collaborate with their peers during any phase of the incident handling life cycle. The organizations participating in this type of relationship are usually peers without any authority over each other and choose to share information, pool re"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "and system-level continuous monitoring strategy; security and privacy plans; Cybersecurity Framework Profile. Expected Outputs: Security and privacy posture reports.109 Primary Responsibility: System Owner; Common Control Provider; Senior A"
+     },
+     {
+      "doc_id": "d1806",
+      "title": "NIST SP 800-61 Rev 2: Computer Security Incident Handling Guide",
+      "snippet": "with those parties before incidents occur to ensure that all parties know their roles and that effective lines of communication are established. Figure 4-1 provides a sample view into an organization performing coordination at every phase o"
+     }
+    ]
+   }
+  },
+  "security_analyst|q3": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The Risk Management Framework (RMF) consists of seven steps: Prepare, Categorize, Select, Implement, Assess, Authorize, and Monitor.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "RISK MANAGEMENT FRAMEWORK STEPS AND STRUCTURE There are seven steps in the RMF; a preparatory step to ensure that organizations are ready to execute the process and six main steps. All seven steps are essential for the successful execution "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "to include assessing control effectiveness, documenting changes to the system and environment of operation, conducting risk assessments and impact analyses, and reporting the security and privacy posture of the system. Figure 2 illustrates "
+     },
+     {
+      "doc_id": "d1804",
+      "title": "NIST SP 800-30 Rev 1: Guide for Conducting Risk Assessments",
+      "snippet": "the systems as evaluated. Risk assessment results at Tier 3 are communicated to organizational entities at Tier 1 and Tier 2. Risk assessment activities can be integrated with the steps in the Risk Management Framework (RMF), as defined in "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "gap analysis to ensure that the risk is accept able, documenting decisions, notifying stakeholders, and approval from the Authorizing Official (or other relevant decision maker). CHAPTER TWO PAGE 11 management levels—that is, some of the ou"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The Risk Management Framework (RMF) consists of seven steps: Prepare, Categorize, Select, Implement, Assess, Authorize, and Monitor.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "RISK MANAGEMENT FRAMEWORK STEPS AND STRUCTURE There are seven steps in the RMF; a preparatory step to ensure that organizations are ready to execute the process and six main steps. All seven steps are essential for the successful execution "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "to include assessing control effectiveness, documenting changes to the system and environment of operation, conducting risk assessments and impact analyses, and reporting the security and privacy posture of the system. Figure 2 illustrates "
+     },
+     {
+      "doc_id": "d1804",
+      "title": "NIST SP 800-30 Rev 1: Guide for Conducting Risk Assessments",
+      "snippet": "the systems as evaluated. Risk assessment results at Tier 3 are communicated to organizational entities at Tier 1 and Tier 2. Risk assessment activities can be integrated with the steps in the Risk Management Framework (RMF), as defined in "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "gap analysis to ensure that the risk is accept able, documenting decisions, notifying stakeholders, and approval from the Authorizing Official (or other relevant decision maker). CHAPTER TWO PAGE 11 management levels—that is, some of the ou"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   }
+  },
+  "security_analyst|q4": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The three components of identity assurance are Identity Assurance Level (IAL), which refers to the identity proofing process; Authenticator Assurance Level (AAL), which refers to the authentication process; and Federation Assurance Level (FAL), which refers to the assertion protocol used in a federated environment.",
+    "citations": [
+     "d1805"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "a requirement, and agencies should not assume they will be the same in any given system or application. The components of identity assurance detailed in these guidelines are as follows: • IAL refers to the identity proofing process. • AAL r"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "in a normative statement in these guidelines, they are CAPITALIZED for ease of identification. For example, SHALL is used to denote a mandatory requirement, while SHOULD refers to a technique, technology, or process that is recommended but "
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "are applicable, successfully authenticating provides reasonable risk-based assurances that the subject accessing the service today is the same as that which accessed the service previously. Digital identity presents a technical challenge be"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "and federation (if applicable); and determined the processes and technologies they will employ to meet each assurance level, agencies SHALL develop a “Digital Identity Acceptance Statement”, in accordance with SP 800- 53 IA-1 a.1. See Secti"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "match). To minimize the risk of compatibility errors, a reference to the base document (i.e., SP 800-63 rather than SP 800-63-3) always refers to the current version of the document. The following table states which sections of this volume "
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The three components of identity assurance are Identity Assurance Level (IAL), which refers to the identity proofing process; Authenticator Assurance Level (AAL), which refers to the authentication process; and Federation Assurance Level (FAL), which refers to the assertion protocol used in a federated environment.",
+    "citations": [
+     "d1805"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "a requirement, and agencies should not assume they will be the same in any given system or application. The components of identity assurance detailed in these guidelines are as follows: • IAL refers to the identity proofing process. • AAL r"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "in a normative statement in these guidelines, they are CAPITALIZED for ease of identification. For example, SHALL is used to denote a mandatory requirement, while SHOULD refers to a technique, technology, or process that is recommended but "
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "are applicable, successfully authenticating provides reasonable risk-based assurances that the subject accessing the service today is the same as that which accessed the service previously. Digital identity presents a technical challenge be"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "and federation (if applicable); and determined the processes and technologies they will employ to meet each assurance level, agencies SHALL develop a “Digital Identity Acceptance Statement”, in accordance with SP 800- 53 IA-1 a.1. See Secti"
+     },
+     {
+      "doc_id": "d1805",
+      "title": "NIST SP 800-63-3: Digital Identity Guidelines",
+      "snippet": "match). To minimize the risk of compatibility errors, a reference to the base document (i.e., SP 800-63 rather than SP 800-63-3) always refers to the current version of the document. The following table states which sections of this volume "
+     }
+    ]
+   }
+  },
+  "security_analyst|q5": {
+   "prefilter": {
+    "refused": false,
+    "answer": "There are fourteen families of recommended security requirements for protecting the confidentiality of CUI in nonfederal systems and organizations.",
+    "citations": [
+     "d1801"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "Protect the confidentiality of backup CUI at storage locations. For ease of use, the security requirements are organized into fourteen families. Each family contains the requirements related to the general security topic of the family. The "
+     },
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "or sections from the document. NARA policy and guidance control sanitization processes for controlled unclassified information. [SP 800-88] provides guidance on media sanitization. CHAPTER THREE PAGE 9 CHAPTER THREE THE REQUIREMENTS SECURIT"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "ensure that requirements for the protection of controlled unclassified information that is processed, stored or transmitted on external systems, are implemented in accordance with applicable laws, executive orders, directives, policies, reg"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "particular controls within the SDLC. 2.2 CONTROL STRUCTURE AND ORGANIZATION Security and privacy controls described in this publication have a well-defined organization and structure. For ease of use in the security and privacy control sele"
+     },
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "or using or operating a system on behalf of an agency; and where there are no specific safeguarding requirements for protecting the confidentiality of CUI prescribed by the authorizing law, regulation, or governmentwide policy for the CUI c"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "There are fourteen families of recommended security requirements for protecting the confidentiality of CUI in nonfederal systems and organizations.",
+    "citations": [
+     "d1801"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "Protect the confidentiality of backup CUI at storage locations. For ease of use, the security requirements are organized into fourteen families. Each family contains the requirements related to the general security topic of the family. The "
+     },
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "or sections from the document. NARA policy and guidance control sanitization processes for controlled unclassified information. [SP 800-88] provides guidance on media sanitization. CHAPTER THREE PAGE 9 CHAPTER THREE THE REQUIREMENTS SECURIT"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "ensure that requirements for the protection of controlled unclassified information that is processed, stored or transmitted on external systems, are implemented in accordance with applicable laws, executive orders, directives, policies, reg"
+     },
+     {
+      "doc_id": "d1800",
+      "title": "NIST SP 800-53 Rev 5: Security and Privacy Controls",
+      "snippet": "particular controls within the SDLC. 2.2 CONTROL STRUCTURE AND ORGANIZATION Security and privacy controls described in this publication have a well-defined organization and structure. For ease of use in the security and privacy control sele"
+     },
+     {
+      "doc_id": "d1801",
+      "title": "NIST SP 800-171 Rev 2: Protecting Controlled Unclassified Information",
+      "snippet": "or using or operating a system on behalf of an agency; and where there are no specific safeguarding requirements for protecting the confidentiality of CUI prescribed by the authorizing law, regulation, or governmentwide policy for the CUI c"
+     }
+    ]
+   }
+  },
+  "security_analyst|q6": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The purpose of the Monitor step, which includes continuous monitoring activities, is to maintain ongoing situational awareness regarding the security and privacy posture of an information system and the organization to support risk management decisions.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "continuous monitoring activities. [Cybersecurity Framework: RS.IM] TASK M-5 SECURITY AND PRIVACY REPORTING • A process is in place to report the security and privacy posture to the authorizing official and other senior leaders and executive"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "privacy posture of the system. Ready access to the current security and privacy posture supports continuous monitoring and ongoing authorization and promotes the near real-time management of risk to organizational operations and assets, ind"
+     },
+     {
+      "doc_id": "d1803",
+      "title": "NIST SP 800-137: Continuous Monitoring",
+      "snippet": "status metrics, and monitoring and assessment frequencies change in accordance with the needs of the organization. The continuous monitoring strategy is reviewed to ensure that it sufficiently supports the organization in operating within a"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "new authorization decision.152 The security and privacy information generated through the continuous monitoring process is provided to the authorizing officials and other organizational officials in a timely manner through security and priv"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The purpose of the Monitor step, which includes continuous monitoring activities, is to maintain ongoing situational awareness regarding the security and privacy posture of an information system and the organization to support risk management decisions.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "continuous monitoring activities. [Cybersecurity Framework: RS.IM] TASK M-5 SECURITY AND PRIVACY REPORTING • A process is in place to report the security and privacy posture to the authorizing official and other senior leaders and executive"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "privacy posture of the system. Ready access to the current security and privacy posture supports continuous monitoring and ongoing authorization and promotes the near real-time management of risk to organizational operations and assets, ind"
+     },
+     {
+      "doc_id": "d1803",
+      "title": "NIST SP 800-137: Continuous Monitoring",
+      "snippet": "status metrics, and monitoring and assessment frequencies change in accordance with the needs of the organization. The continuous monitoring strategy is reviewed to ensure that it sufficiently supports the organization in operating within a"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "new authorization decision.152 The security and privacy information generated through the continuous monitoring process is provided to the authorizing officials and other organizational officials in a timely manner through security and priv"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   }
+  },
+  "compliance_analyst|q1": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "tailored control baselines described above. References: [SP 800-53]; [SP 800-53B]; [SP 800-160 v1] (Business or Mission Analysis and Stakeholder Needs and Requirements Definition Processes); [NIST CSF] (Core, Profiles). COMMON CONTROL IDENT"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "are allocated to a system or an organization consistent with the organization’s enterprise architecture and security or privacy architecture and the allocated security and privacy requirements. Not all controls need to be allocated to every"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "risk management strategy; list of selected controls for the system and environment of operation; organizational security, privacy, and SCRM policies. Expected Outputs: Security and privacy plans for the system. Primary Responsibility: Syste"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "to the environment of operation. Potential Inputs: Security categorization; organization- and system-level risk assessment results; organizational policy on system registration; enterprise architecture; security and privacy architectures; s"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "the organization and provide a protection capability that is partially inher ited by one or more systems. And finally, system-specific controls satisfy security and privacy requirements allocated to the system and provide a protection capab"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "tailored control baselines described above. References: [SP 800-53]; [SP 800-53B]; [SP 800-160 v1] (Business or Mission Analysis and Stakeholder Needs and Requirements Definition Processes); [NIST CSF] (Core, Profiles). COMMON CONTROL IDENT"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "are allocated to a system or an organization consistent with the organization’s enterprise architecture and security or privacy architecture and the allocated security and privacy requirements. Not all controls need to be allocated to every"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "risk management strategy; list of selected controls for the system and environment of operation; organizational security, privacy, and SCRM policies. Expected Outputs: Security and privacy plans for the system. Primary Responsibility: Syste"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "to the environment of operation. Potential Inputs: Security categorization; organization- and system-level risk assessment results; organizational policy on system registration; enterprise architecture; security and privacy architectures; s"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "the organization and provide a protection capability that is partially inher ited by one or more systems. And finally, system-specific controls satisfy security and privacy requirements allocated to the system and provide a protection capab"
+     }
+    ]
+   }
+  },
+  "compliance_analyst|q2": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "and system-level continuous monitoring strategy; security and privacy plans; Cybersecurity Framework Profile. Expected Outputs: Security and privacy posture reports.109 Primary Responsibility: System Owner; Common Control Provider; Senior A"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "information from manual assessments. As additional automated monitoring functionality is added, processes can be adjusted. Transitioning from a static authorization process to a dynamic, ongoing authorization process requires considerable t"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "[NARA CUI]; [SP 800-39] (System Level); [SP 800-60 v1]; [SP 800-60 v2]; [NIST CSF] (Core [Identify Function]). INFORMATION LIFE CYCLE TASK P-13 Identify and understand all stages of the information life cycle for each information type proce"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "Authorization package; risk determination; organization- and system-level risk assessment results. Expected Outputs: Risk responses for determined risks. Primary Responsibility: Authorizing Official or Authorizing Official Designated Repres"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "– Operations/Maintenance. Discussion: The information life cycle describes the stages through which information passes, typically characterized as creation or collection, processing, dissemination, use, stora ge, and disposition, to include"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "and system-level continuous monitoring strategy; security and privacy plans; Cybersecurity Framework Profile. Expected Outputs: Security and privacy posture reports.109 Primary Responsibility: System Owner; Common Control Provider; Senior A"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "information from manual assessments. As additional automated monitoring functionality is added, processes can be adjusted. Transitioning from a static authorization process to a dynamic, ongoing authorization process requires considerable t"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "[NARA CUI]; [SP 800-39] (System Level); [SP 800-60 v1]; [SP 800-60 v2]; [NIST CSF] (Core [Identify Function]). INFORMATION LIFE CYCLE TASK P-13 Identify and understand all stages of the information life cycle for each information type proce"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "Authorization package; risk determination; organization- and system-level risk assessment results. Expected Outputs: Risk responses for determined risks. Primary Responsibility: Authorizing Official or Authorizing Official Designated Repres"
+     }
+    ]
+   }
+  },
+  "compliance_analyst|q3": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The Risk Management Framework (RMF) consists of seven steps: Prepare, Categorize, Select, Implement, Assess, Authorize, and Monitor.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "RISK MANAGEMENT FRAMEWORK STEPS AND STRUCTURE There are seven steps in the RMF; a preparatory step to ensure that organizations are ready to execute the process and six main steps. All seven steps are essential for the successful execution "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "to include assessing control effectiveness, documenting changes to the system and environment of operation, conducting risk assessments and impact analyses, and reporting the security and privacy posture of the system. Figure 2 illustrates "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "gap analysis to ensure that the risk is accept able, documenting decisions, notifying stakeholders, and approval from the Authorizing Official (or other relevant decision maker). CHAPTER TWO PAGE 11 management levels—that is, some of the ou"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "make their RMF implementations more effective, efficient, and cost-effective. CHAPTER THREE PAGE 28 3.1 PREPARE 52 PREPARE TASKS—ORGANIZATION LEVEL 53 Table 1 provides a summary of tasks and expected outcomes for the RMF Prepare step at the"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The Risk Management Framework (RMF) consists of seven steps: Prepare, Categorize, Select, Implement, Assess, Authorize, and Monitor.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "RISK MANAGEMENT FRAMEWORK STEPS AND STRUCTURE There are seven steps in the RMF; a preparatory step to ensure that organizations are ready to execute the process and six main steps. All seven steps are essential for the successful execution "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "to include assessing control effectiveness, documenting changes to the system and environment of operation, conducting risk assessments and impact analyses, and reporting the security and privacy posture of the system. Figure 2 illustrates "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "gap analysis to ensure that the risk is accept able, documenting decisions, notifying stakeholders, and approval from the Authorizing Official (or other relevant decision maker). CHAPTER TWO PAGE 11 management levels—that is, some of the ou"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "make their RMF implementations more effective, efficient, and cost-effective. CHAPTER THREE PAGE 28 3.1 PREPARE 52 PREPARE TASKS—ORGANIZATION LEVEL 53 Table 1 provides a summary of tasks and expected outcomes for the RMF Prepare step at the"
+     }
+    ]
+   }
+  },
+  "compliance_analyst|q4": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "provides guidance for implementing enterprise architectures. 22 Security and privacy requirements can be obtained from many sources (e.g., laws, executive orders, directives, regulations, policies, standards, and mission/business/operationa"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "implemented on system elements in accordance with federal and organizational policies. When organizations have no direct control over what controls are implemented in a system element, for example, in commercial off-the-shelf products, orga"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "enhancements, supplemental guidance, and other supporting information employed during the tailoring process, that is intended to complement (and further refine) security control baselines. The overlay specification may be more stringent or "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "and the independence of the assessors conducting the assessments are critical issues that should be reviewed and considered by organizations prior to leveraging assessment results. Effective risk decisions by authorizing officials depend on"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "to achieve the required level of protection or recommend a greater acceptance of risk to the authorizing official. Organizations may also consider federally or organizationally directed or approved overlays, tailored baselines, or Cybersecu"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "provides guidance for implementing enterprise architectures. 22 Security and privacy requirements can be obtained from many sources (e.g., laws, executive orders, directives, regulations, policies, standards, and mission/business/operationa"
+     }
+    ]
+   }
+  },
+  "compliance_analyst|q5": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "provides guidance for implementing enterprise architectures. 22 Security and privacy requirements can be obtained from many sources (e.g., laws, executive orders, directives, regulations, policies, standards, and mission/business/operationa"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "as intended, and satisfying the security and privacy requirements in response to laws, executive orders, regulations, directives, policies, standards, or mission and business requirements. Authorizing officials use the security and privacy "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "and object ives of organizations, through protection needs and security and privacy requirements, to specific security and privacy solutions provided by people, processes, and technologies. References: [SP 800-39] (Mission/Business Process "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "definition). Existing – Operations/Maintenance. CHAPTER THREE PAGE 45 Discussion: Security and privacy requirements are allocated to guide and inform control selection and implementation for the organization, system, system elements, and/or"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "CHAPTER ONE PAGE 4 • To facilitate the integration of security and privacy requirements and controls into the enterprise architecture, SDLC processes, acquisition processes, and systems engineering processes;17 and • To facilitate the imple"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "provides guidance for implementing enterprise architectures. 22 Security and privacy requirements can be obtained from many sources (e.g., laws, executive orders, directives, regulations, policies, standards, and mission/business/operationa"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "as intended, and satisfying the security and privacy requirements in response to laws, executive orders, regulations, directives, policies, standards, or mission and business requirements. Authorizing officials use the security and privacy "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "and object ives of organizations, through protection needs and security and privacy requirements, to specific security and privacy solutions provided by people, processes, and technologies. References: [SP 800-39] (Mission/Business Process "
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "definition). Existing – Operations/Maintenance. CHAPTER THREE PAGE 45 Discussion: Security and privacy requirements are allocated to guide and inform control selection and implementation for the organization, system, system elements, and/or"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "CHAPTER ONE PAGE 4 • To facilitate the integration of security and privacy requirements and controls into the enterprise architecture, SDLC processes, acquisition processes, and systems engineering processes;17 and • To facilitate the imple"
+     }
+    ]
+   }
+  },
+  "compliance_analyst|q6": {
+   "prefilter": {
+    "refused": false,
+    "answer": "The purpose of the Monitor step, which includes continuous monitoring activities, is to maintain ongoing situational awareness regarding the security and privacy posture of an information system and the organization to support risk management decisions.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "continuous monitoring activities. [Cybersecurity Framework: RS.IM] TASK M-5 SECURITY AND PRIVACY REPORTING • A process is in place to report the security and privacy posture to the authorizing official and other senior leaders and executive"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "privacy posture of the system. Ready access to the current security and privacy posture supports continuous monitoring and ongoing authorization and promotes the near real-time management of risk to organizational operations and assets, ind"
+     },
+     {
+      "doc_id": "d1803",
+      "title": "NIST SP 800-137: Continuous Monitoring",
+      "snippet": "status metrics, and monitoring and assessment frequencies change in accordance with the needs of the organization. The continuous monitoring strategy is reviewed to ensure that it sufficiently supports the organization in operating within a"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "new authorization decision.152 The security and privacy information generated through the continuous monitoring process is provided to the authorizing officials and other organizational officials in a timely manner through security and priv"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": false,
+    "answer": "The purpose of the Monitor step, which includes continuous monitoring activities, is to maintain ongoing situational awareness regarding the security and privacy posture of an information system and the organization to support risk management decisions.",
+    "citations": [
+     "d1802"
+    ],
+    "hits": [
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "continuous monitoring activities. [Cybersecurity Framework: RS.IM] TASK M-5 SECURITY AND PRIVACY REPORTING • A process is in place to report the security and privacy posture to the authorizing official and other senior leaders and executive"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "privacy posture of the system. Ready access to the current security and privacy posture supports continuous monitoring and ongoing authorization and promotes the near real-time management of risk to organizational operations and assets, ind"
+     },
+     {
+      "doc_id": "d1803",
+      "title": "NIST SP 800-137: Continuous Monitoring",
+      "snippet": "status metrics, and monitoring and assessment frequencies change in accordance with the needs of the organization. The continuous monitoring strategy is reviewed to ensure that it sufficiently supports the organization in operating within a"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "new authorization decision.152 The security and privacy information generated through the continuous monitoring process is provided to the authorizing officials and other organizational officials in a timely manner through security and priv"
+     },
+     {
+      "doc_id": "d1802",
+      "title": "NIST SP 800-37 Rev 2: Risk Management Framework",
+      "snippet": "(OPTIONAL) • A prioritization of organizational systems with the same impact level is conducted. [Cybersecurity Framework: ID.AM-5] TASK P-7 CONTINUOUS MONITORING STRATEGY— ORGANIZATION • An organization-wide strategy for monitoring control"
+     }
+    ]
+   }
+  },
+  "mid_visibility|q1": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d0768",
+      "title": "people onboarding-checklist note 0768",
+      "snippet": "Reference PEO-0768. This public note sets out how the people department handles new starter checklists. Approval for amounts above USD 30,250 requires sign-off from the operations lead. New starter checklists must be completed within 27 wor"
+     },
+     {
+      "doc_id": "d1716",
+      "title": "people hardware-requests note 1716",
+      "snippet": "Reference PEO-1716. This public note sets out how the people department handles hardware requests. Approval for amounts above USD 88,250 requires sign-off from the compliance officer. The people team reviews open hardware requests every 12 "
+     },
+     {
+      "doc_id": "d0013",
+      "title": "all onboarding-checklist note 0013",
+      "snippet": "Reference ALL-0013. This public note sets out how the all department handles new starter checklists. The all team reviews open new starter checklists every 5 weeks and records any exception. New starter checklists must be completed within 2"
+     },
+     {
+      "doc_id": "d1236",
+      "title": "operations onboarding-checklist note 1236",
+      "snippet": "Reference OPE-1236. This public note sets out how the operations department handles new starter checklists. Approval for amounts above USD 43,500 requires sign-off from the operations lead. The operations team reviews open new starter check"
+     },
+     {
+      "doc_id": "d0132",
+      "title": "facilities onboarding-checklist note 0132",
+      "snippet": "Reference FAC-0132. This public note sets out how the facilities department handles new starter checklists. Approval for amounts above USD 55,000 requires sign-off from the controller. The facilities team reviews open new starter checklists"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": []
+   }
+  },
+  "mid_visibility|q2": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d0000",
+      "title": "all incident-response note 0000",
+      "snippet": "Reference ALL-0000. This public note sets out how the all department handles incident reports. Incident reports must be completed within 28 working days and logged in the all register. Approval for amounts above USD 33,250 requires sign-off"
+     },
+     {
+      "doc_id": "d0401",
+      "title": "facilities incident-response note 0401",
+      "snippet": "Reference FAC-0401. This internal note sets out how the facilities department handles incident reports. Approval for amounts above USD 44,500 requires sign-off from the programme manager. Incident reports must be completed within 27 working"
+     },
+     {
+      "doc_id": "d1637",
+      "title": "facilities incident-response note 1637",
+      "snippet": "Reference FAC-1637. This confidential note sets out how the facilities department handles incident reports. The facilities team reviews open incident reports every 8 weeks and records any exception. Incident reports must be completed within"
+     },
+     {
+      "doc_id": "d0495",
+      "title": "facilities incident-response note 0495",
+      "snippet": "Reference FAC-0495. This internal note sets out how the facilities department handles incident reports. Incident reports must be completed within 26 working days and logged in the facilities register. Approval for amounts above USD 15,000 r"
+     },
+     {
+      "doc_id": "d1270",
+      "title": "facilities incident-response note 1270",
+      "snippet": "Reference FAC-1270. This internal note sets out how the facilities department handles incident reports. Approval for amounts above USD 79,500 requires sign-off from the programme manager. Incident reports must be completed within 14 working"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": []
+   }
+  },
+  "mid_visibility|q3": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1206",
+      "title": "facilities supplier-risk note 1206",
+      "snippet": "Reference FAC-1206. This confidential note sets out how the facilities department handles supplier risk assessments. Supplier risk assessments must be completed within 15 working days and logged in the facilities register. Approval for amou"
+     },
+     {
+      "doc_id": "d0769",
+      "title": "facilities supplier-risk note 0769",
+      "snippet": "Reference FAC-0769. This internal note sets out how the facilities department handles supplier risk assessments. Approval for amounts above USD 25,500 requires sign-off from the programme manager. The facilities team reviews open supplier r"
+     },
+     {
+      "doc_id": "d1509",
+      "title": "facilities supplier-risk note 1509",
+      "snippet": "Reference FAC-1509. This internal note sets out how the facilities department handles supplier risk assessments. Supplier risk assessments must be completed within 4 working days and logged in the facilities register. The facilities team re"
+     },
+     {
+      "doc_id": "d1210",
+      "title": "facilities supplier-risk note 1210",
+      "snippet": "Reference FAC-1210. This public note sets out how the facilities department handles supplier risk assessments. Approval for amounts above USD 18,250 requires sign-off from the operations lead. Supplier risk assessments must be completed wit"
+     },
+     {
+      "doc_id": "d0167",
+      "title": "facilities supplier-risk note 0167",
+      "snippet": "Reference FAC-0167. This confidential note sets out how the facilities department handles supplier risk assessments. Supplier risk assessments must be completed within 27 working days and logged in the facilities register. The facilities te"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": []
+   }
+  },
+  "mid_visibility|q4": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d0358",
+      "title": "people data-retention note 0358",
+      "snippet": "Reference PEO-0358. This public note sets out how the people department handles data retention exceptions. Data retention exceptions must be completed within 3 working days and logged in the people register. Approval for amounts above USD 2"
+     },
+     {
+      "doc_id": "d0611",
+      "title": "people access-reviews note 0611",
+      "snippet": "Reference PEO-0611. This public note sets out how the people department handles access review findings. Approval for amounts above USD 82,250 requires sign-off from the controller. The people team reviews open access review findings every 6"
+     },
+     {
+      "doc_id": "d1243",
+      "title": "facilities access-reviews note 1243",
+      "snippet": "Reference FAC-1243. This internal note sets out how the facilities department handles access review findings. Approval for amounts above USD 87,250 requires sign-off from the programme manager. Access review findings must be completed withi"
+     },
+     {
+      "doc_id": "d0346",
+      "title": "people release-approval note 0346",
+      "snippet": "Reference PEO-0346. This public note sets out how the people department handles release approvals. The people team reviews open release approvals every 2 weeks and records any exception. Release approvals must be completed within 29 working"
+     },
+     {
+      "doc_id": "d0068",
+      "title": "facilities data-retention note 0068",
+      "snippet": "Reference FAC-0068. This public note sets out how the facilities department handles data retention exceptions. Approval for amounts above USD 56,750 requires sign-off from the compliance officer. Data retention exceptions must be completed "
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": []
+   }
+  },
+  "mid_visibility|q5": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d1060",
+      "title": "facilities data-retention note 1060",
+      "snippet": "Reference FAC-1060. This confidential note sets out how the facilities department handles data retention exceptions. Data retention exceptions must be completed within 17 working days and logged in the facilities register. The facilities te"
+     },
+     {
+      "doc_id": "d0068",
+      "title": "facilities data-retention note 0068",
+      "snippet": "Reference FAC-0068. This public note sets out how the facilities department handles data retention exceptions. Approval for amounts above USD 56,750 requires sign-off from the compliance officer. Data retention exceptions must be completed "
+     },
+     {
+      "doc_id": "d0509",
+      "title": "facilities data-retention note 0509",
+      "snippet": "Reference FAC-0509. This confidential note sets out how the facilities department handles data retention exceptions. Approval for amounts above USD 17,000 requires sign-off from the programme manager. Data retention exceptions must be compl"
+     },
+     {
+      "doc_id": "d1132",
+      "title": "facilities data-retention note 1132",
+      "snippet": "Reference FAC-1132. This public note sets out how the facilities department handles data retention exceptions. Data retention exceptions must be completed within 27 working days and logged in the facilities register. The facilities team rev"
+     },
+     {
+      "doc_id": "d0358",
+      "title": "people data-retention note 0358",
+      "snippet": "Reference PEO-0358. This public note sets out how the people department handles data retention exceptions. Data retention exceptions must be completed within 3 working days and logged in the people register. Approval for amounts above USD 2"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": []
+   }
+  },
+  "mid_visibility|q6": {
+   "prefilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": [
+     {
+      "doc_id": "d0764",
+      "title": "facilities data-retention note 0764",
+      "snippet": "Reference FAC-0764. This internal note sets out how the facilities department handles data retention exceptions. The facilities team reviews open data retention exceptions every 9 weeks and records any exception. Approval for amounts above "
+     },
+     {
+      "doc_id": "d1132",
+      "title": "facilities data-retention note 1132",
+      "snippet": "Reference FAC-1132. This public note sets out how the facilities department handles data retention exceptions. Data retention exceptions must be completed within 27 working days and logged in the facilities register. The facilities team rev"
+     },
+     {
+      "doc_id": "d1060",
+      "title": "facilities data-retention note 1060",
+      "snippet": "Reference FAC-1060. This confidential note sets out how the facilities department handles data retention exceptions. Data retention exceptions must be completed within 17 working days and logged in the facilities register. The facilities te"
+     },
+     {
+      "doc_id": "d0453",
+      "title": "facilities data-retention note 0453",
+      "snippet": "Reference FAC-0453. This confidential note sets out how the facilities department handles data retention exceptions. Data retention exceptions must be completed within 4 working days and logged in the facilities register. Approval for amoun"
+     },
+     {
+      "doc_id": "d0358",
+      "title": "people data-retention note 0358",
+      "snippet": "Reference PEO-0358. This public note sets out how the people department handles data retention exceptions. Data retention exceptions must be completed within 3 working days and logged in the people register. Approval for amounts above USD 2"
+     }
+    ]
+   },
+   "postfilter": {
+    "refused": true,
+    "answer": "I can't find that in the documents you have access to.",
+    "citations": [],
+    "hits": []
+   }
+  }
+ }
+}

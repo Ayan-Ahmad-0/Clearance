@@ -43,7 +43,7 @@ def main():
         hit_ids(reader, user, "warm up the model")  # first call loads the embedder
 
         # A. deny row on a document the user can read right now
-        deny_doc = sorted(before)[0]
+        deny_doc = min(before)
         seen_before = deny_doc in hit_ids(reader, user, docs[deny_doc]["text"])
         writer.execute("INSERT INTO acl (node_id, subject_id, effect) VALUES (%s, %s, 'deny')",
                        (deny_doc, user))

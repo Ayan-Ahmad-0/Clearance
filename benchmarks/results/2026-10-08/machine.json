@@ -1,0 +1,10 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+  "cpu_cores_physical": 4,
+  "cpu_cores_logical": 8,
+  "ram_gb": 15.7,
+  "disk_free_gb": 85.7,
+  "python": "3.13.5",
+  "git_sha": "be0d07f7bc4a80189798e09efc1826082fce84fa"
+}

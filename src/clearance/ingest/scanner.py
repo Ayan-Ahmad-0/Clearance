@@ -15,8 +15,10 @@ FLAGS = re.IGNORECASE | re.MULTILINE | re.DOTALL
 
 PATTERNS = {
     "override": [
-        r"\b(ignore|disregard|forget|override)\b[^.]{0,40}\b(previous|prior|above|earlier|preceding)\b"
-        r"[^.]{0,30}\b(instructions?|rules?|prompts?|context|guidelines?)\b",
+        (
+            r"\b(ignore|disregard|forget|override)\b[^.]{0,40}\b(previous|prior|above|earlier|preceding)\b"
+            r"[^.]{0,30}\b(instructions?|rules?|prompts?|context|guidelines?)\b"
+        ),
         r"\bnew (instructions?|task)\s*:",
         r"\bignore (the|this|your) (question|user|request)\b",
     ],
@@ -27,9 +29,11 @@ PATTERNS = {
         r"\byou are now (a|an|the|in)\b",
     ],
     "exfiltration": [
-        r"\b(reveal|print|output|repeat|disclose|leak|list)\b[^.]{0,50}"
-        r"\b(system prompt|verification codes?|secrets?|other documents|every other document"
-        r"|all documents|full context|hidden (text|instructions))\b",
+        (
+            r"\b(reveal|print|output|repeat|disclose|leak|list)\b[^.]{0,50}"
+            r"\b(system prompt|verification codes?|secrets?|other documents|every other document"
+            r"|all documents|full context|hidden (text|instructions))\b"
+        ),
         r"\bregardless of (who|the user|permissions?|access)\b",
     ],
     "link_exfil": [

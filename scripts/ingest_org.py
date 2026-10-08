@@ -51,7 +51,7 @@ def main():
         conn.commit()
         conn.execute("ANALYZE chunks")
 
-    Path("data/org/quarantine.jsonl").write_text(
+    Path(args.docs).with_name("quarantine.jsonl").write_text(
         "".join(json.dumps(q) + "\n" for q in quarantined)
     )
     print(f"{len(rows)} chunks embedded in {embed_seconds}s and loaded, "

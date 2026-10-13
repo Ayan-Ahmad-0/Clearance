@@ -81,7 +81,11 @@ def load_organisation(conn: psycopg.Connection, org_path: Path) -> None:
 
 
 def load_chunks(conn: psycopg.Connection, docs_path: Path) -> None:
-    """Chunk, scan, embed, and insert documents into chunks table."""
+    """Chunk, scan, embed, and insert documents into chunks table with strict memory limits."""
+    import gc
+
+    import torch
+
     from clearance.ingest.chunker import chunk
     from clearance.ingest.embedder import embed_passages, to_pgvector
     from clearance.ingest.scanner import scan
@@ -98,20 +102,36 @@ def load_chunks(conn: psycopg.Connection, docs_path: Path) -> None:
                 else:
                     rows.append((doc["id"], i, c))
 
-    print(f"[init_db] Generating embeddings for {len(rows)} chunks (this takes ~20-30s on CPU)...")
+    total = len(rows)
+    print(f"[init_db] Embedding and loading {total} chunks in memory-safe batches of 64...")
     started = time.perf_counter()
-    vectors = embed_passages([r[2] for r in rows], batch_size=64)
-    duration = round(time.perf_counter() - started, 1)
 
-    print("[init_db] Inserting chunks into PostgreSQL...")
     with conn.transaction():
         conn.execute("TRUNCATE chunks RESTART IDENTITY;")
-        with conn.cursor() as cur:
-            cur.executemany(
-                "INSERT INTO chunks (doc_id, ord, text, embedding) VALUES (%s, %s, %s, %s::vector);",
-                [(d, o, t, to_pgvector(v)) for (d, o, t), v in zip(rows, vectors, strict=True)],
-            )
+
+    batch_size = 64
+    with torch.inference_mode():
+        for start in range(0, total, batch_size):
+            batch = rows[start : start + batch_size]
+            batch_texts = [r[2] for r in batch]
+            vectors = embed_passages(batch_texts, batch_size=batch_size)
+
+            with conn.transaction(), conn.cursor() as cur:
+                cur.executemany(
+                    "INSERT INTO chunks (doc_id, ord, text, embedding) VALUES (%s, %s, %s, %s::vector);",
+                    [(d, o, t, to_pgvector(v)) for (d, o, t), v in zip(batch, vectors, strict=True)],
+                )
+            del vectors, batch_texts
+            if (start // batch_size) % 8 == 0:
+                gc.collect()
+                pct = round((start + len(batch)) / total * 100)
+                print(f"[init_db] Progress: {start + len(batch)}/{total} chunks ({pct}%)...")
+
+    gc.collect()
+    with conn.transaction():
         conn.execute("ANALYZE chunks;")
+
+    duration = round(time.perf_counter() - started, 1)
 
     quarantine_path = docs_path.with_name("quarantine.jsonl")
     try:
@@ -122,7 +142,7 @@ def load_chunks(conn: psycopg.Connection, docs_path: Path) -> None:
     except OSError as exc:
         print(f"[init_db] Warning: Could not write quarantine.jsonl: {exc}")
 
-    print(f"[init_db] Loaded {len(rows)} chunks embedded in {duration}s ({len(quarantined)} quarantined).")
+    print(f"[init_db] Loaded {total} chunks embedded in {duration}s ({len(quarantined)} quarantined).")
 
 
 def main():

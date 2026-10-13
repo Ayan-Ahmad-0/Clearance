@@ -58,7 +58,7 @@ def apply_schema(conn: psycopg.Connection, schema_path: Path) -> None:
     raw_sql = schema_path.read_text(encoding="utf-8")
     clean_lines = [
         line for line in raw_sql.splitlines()
-        if not line.strip().startswith("\\")
+        if not line.strip().startswith("\\") and not line.strip().startswith("SET transaction_timeout")
     ]
     clean_sql = "\n".join(clean_lines)
 

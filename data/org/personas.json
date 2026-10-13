@@ -1,0 +1,22 @@
+{
+ "administrator": {
+  "user": "u000",
+  "visible_documents": 1800,
+  "visible_fraction": 1.0
+ },
+ "new_joiner": {
+  "user": "u003",
+  "visible_documents": 18,
+  "visible_fraction": 0.01
+ },
+ "junior": {
+  "user": "u027",
+  "visible_documents": 78,
+  "visible_fraction": 0.0433
+ },
+ "mid_visibility": {
+  "user": "u024",
+  "visible_documents": 195,
+  "visible_fraction": 0.1083
+ }
+}

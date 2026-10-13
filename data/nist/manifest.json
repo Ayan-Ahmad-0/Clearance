@@ -1,0 +1,51 @@
+[
+ {
+  "name": "sp800-53r5",
+  "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf",
+  "bytes": 6073678,
+  "sha256": "fc63bcd61715d0181dd8e85998b1e6201ae3515fc6626102101cab1841e11ec6",
+  "pages": 492
+ },
+ {
+  "name": "sp800-37r2",
+  "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf",
+  "bytes": 2270327,
+  "sha256": "4f75e1136bb905a654f1bcd9eefefb4108f47597276ee5eec0688f6d96f6a01d",
+  "pages": 183
+ },
+ {
+  "name": "sp800-171r2",
+  "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171r2.pdf",
+  "bytes": 1539170,
+  "sha256": "298bdbfcf6a4890a564b225c893230a0b32b2e69e3b98dd898aaeb1d544c5e12",
+  "pages": 114
+ },
+ {
+  "name": "sp800-63-3",
+  "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-3.pdf",
+  "bytes": 1599268,
+  "sha256": "915bb812cb705918461e642e84141c6ca2adc2ca0106e1d88f3884c61f07110a",
+  "pages": 76
+ },
+ {
+  "name": "sp800-61r2",
+  "url": "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r2.pdf",
+  "bytes": 1744473,
+  "sha256": "b1c5ead0632dcfb979c59d8c462b094ad2465ddaf62d5c246289d6d9b4419df1",
+  "pages": 80
+ },
+ {
+  "name": "sp800-30r1",
+  "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-30r1.pdf",
+  "bytes": 826897,
+  "sha256": "f214087f0bdb35932a28c16eb93932a33c67a6edfb5e6f1638866bd201c98e04",
+  "pages": 95
+ },
+ {
+  "name": "sp800-137",
+  "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-137.pdf",
+  "bytes": 986916,
+  "sha256": "2d1c0bf459f5e1bfd41ceb5eac83bf62e4c34bf08e2e7088b37cb73a11442b98",
+  "pages": 80
+ }
+]

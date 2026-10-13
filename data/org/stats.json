@@ -1,0 +1,27 @@
+{
+ "seed": 42,
+ "org_sha256": "e25a1abe5c2658b2073900c5c5844f18c425711451e145adbb8cefa7cc30182f",
+ "principals": 400,
+ "groups": 60,
+ "folders": 62,
+ "documents": 1800,
+ "documents_by_tier": {
+  "public": 286,
+  "internal": 794,
+  "confidential": 508,
+  "restricted": 212
+ },
+ "acl_rows": 112,
+ "share_users_with_conflict_depth3": 0.6275,
+ "share_users_reaching_cycle": 0.265,
+ "share_users_beyond_depth_bound": 0.2775,
+ "users_per_visibility_band": {
+  "up_to_2_percent": 20,
+  "2_to_10_percent": 146,
+  "10_to_25_percent": 194,
+  "over_25_percent": 40
+ },
+ "admin_visible_fraction": 1.0,
+ "min_visible_fraction": 0.01,
+ "max_visible_fraction_non_admin": 0.3377777777777778
+}

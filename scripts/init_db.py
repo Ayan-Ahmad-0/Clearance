@@ -64,6 +64,7 @@ def apply_schema(conn: psycopg.Connection, schema_path: Path) -> None:
 
     with conn.transaction():
         conn.execute(clean_sql)
+    conn.execute("SET search_path = public, pg_catalog;")
     print("[init_db] Schema and pgvector extension applied successfully.")
 
 
@@ -153,10 +154,10 @@ def main():
             apply_schema(conn, schema_path)
 
         with conn.cursor() as cur:
-            cur.execute("SELECT count(*) FROM principals;")
+            cur.execute("SELECT count(*) FROM public.principals;")
             principal_count = cur.fetchone()[0]
 
-            cur.execute("SELECT count(*) FROM chunks;")
+            cur.execute("SELECT count(*) FROM public.chunks;")
             chunk_count = cur.fetchone()[0]
 
         if principal_count == 0 or args.force:

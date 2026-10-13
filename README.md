@@ -8,7 +8,7 @@ A permission-aware document search assistant that answers questions using only w
 
 ---
 
-## 📋 Overview
+## Overview
 
 Clearance is a question-answering system for organisations where not everyone may read everything. A normal search engine grabs the best matches from every document and hides the forbidden ones afterwards, which leaves restricted people with almost nothing. Clearance reverses the order: it works out what a person may read, then searches only inside that. It:
 
@@ -27,7 +27,7 @@ This mirrors how a permission-aware retrieval system should be validated: not ju
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 **Synthetic org + NIST PDFs** → **Scan & Chunk (Python)** → **Local Embeddings (bge-small-en-v1.5)** → **Postgres + pgvector** → **Access-filtered Retrieve + Generate (Gemini)** → **Demo page (FastAPI + static HTML)**
 
@@ -61,7 +61,7 @@ This mirrors how a permission-aware retrieval system should be validated: not ju
 
 ---
 
-## 📊 Demo Output
+## Demo Output
 
 ![Administrator view](images/demo_admin.png) ![Restricted view](images/demo_restricted.png)
 
@@ -69,7 +69,7 @@ This mirrors how a permission-aware retrieval system should be validated: not ju
 
 ---
 
-## 🔄 Pipeline Flow
+## Pipeline Flow
 
 ```
 Generate synthetic organisation (seed 42) + add NIST PDFs (overlay)
@@ -100,7 +100,7 @@ Each stage writes its own files (`org.json`, `documents.jsonl`, `quarantine.json
 
 ---
 
-## ✅ Evaluation Results
+## Evaluation Results
 
 ### Access rules match an independent reference
 
@@ -159,7 +159,7 @@ TODO: latency table (p50 / p95 per persona per mode), 60,000 and 400,000 chunk i
 
 ---
 
-## 🗂️ Access Store (Postgres + pgvector)
+## Access Store (Postgres + pgvector)
 
 | Object | Description |
 | --- | --- |
@@ -171,7 +171,7 @@ TODO: latency table (p50 / p95 per persona per mode), 60,000 and 400,000 chunk i
 
 ---
 
-## 🔒 Grounding & Security
+## Grounding & Security
 
 - **Access enforced inside the search.** Only chunks from documents the person may read can be retrieved, so nothing outside that set can reach the model
 - **Independent reference check.** A separate pure-Python resolver computes the same rules; tests compare the two on every pair and on random organisations
@@ -183,7 +183,7 @@ TODO: latency table (p50 / p95 per persona per mode), 60,000 and 400,000 chunk i
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 clearance/
@@ -229,7 +229,7 @@ clearance/
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 Set these in your environment or a `.env` file in the project root:
 
@@ -255,7 +255,7 @@ DAILY_CAP=300                 # live questions per day, all visitors
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ```
 # Clone the repo
@@ -302,7 +302,7 @@ python -m http.server -d demo 8000
 
 ---
 
-## 🚧 Challenges Solved
+## Challenges Solved
 
 - Found that the naive approach (search everything, hide forbidden results afterwards) **starves restricted users**: the most restricted persona averaged 0.8 results out of 10, because the best global matches sit in documents they cannot read. Prefilter returns a full list; the benchmark table above is the evidence
 - Kept the access rules honest by writing a **second, independent resolver** and comparing it with the SQL version across 720,000 pairs and thousands of random organisations, instead of trusting a single implementation
@@ -316,7 +316,7 @@ python -m http.server -d demo 8000
 
 ---
 
-## ⚠️ Known Limitations
+## Known Limitations
 
 - **Authentication is out of scope.** Clearance decides what a known person may read and assumes the surrounding application has already verified who is asking. The demo's person selector stands in for a login so visitors can compare four roles; in a real deployment users would never choose who they are
 - **"Zero leaks" is a measured result for these runs**, not a proof of security
@@ -329,7 +329,7 @@ python -m http.server -d demo 8000
 
 ---
 
-## 🛠️ Future Improvements
+## Future Improvements
 
 - Build an LLM judge with a hand-labelled set, and report answer quality per retrieval mode
 - Rerun the 400,000-chunk benchmark with a higher `hnsw.max_scan_tuples` and report how prefilter recovers

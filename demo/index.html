@@ -347,7 +347,7 @@ td.worse{color:var(--warn)}
 </main>
 
 <script>
-const API_URL = "http://localhost:8001";
+const API_URL = (new URLSearchParams(window.location.search).get('api')) || window.CLEARANCE_API_URL || (window.location.port === "8000" ? "http://localhost:8001" : "");
 const $=id=>document.getElementById(id);
 const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
 const SVGNS='http://www.w3.org/2000/svg';

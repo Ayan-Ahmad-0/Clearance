@@ -16,9 +16,17 @@ from clearance.answering.llm import get_provider
 from clearance.retrieval.search import search
 from reference_resolver import authorised
 
-ORG = Path(os.environ.get("ORG_DIR", "data/org_nist"))
-DSN = os.environ["DATABASE_URL"]
-ORIGINS = os.environ.get("ALLOWED_ORIGINS", "http://localhost:8000").split(",")
+ORG_PATH_ENV = os.environ.get("ORG_DIR", "data/org_nist")
+ORG = Path(ORG_PATH_ENV)
+if not ORG.is_absolute():
+    repo_root = Path(__file__).resolve().parents[3]
+    candidate = repo_root / ORG_PATH_ENV
+    if candidate.exists():
+        ORG = candidate
+
+DSN = os.environ.get("DATABASE_URL", "")
+ORIGINS_RAW = os.environ.get("ALLOWED_ORIGINS", "*")
+ORIGINS = [o.strip() for o in ORIGINS_RAW.split(",") if o.strip()]
 PER_IP = int(os.environ.get("RATE_PER_IP", "10"))   # questions per window per address
 WINDOW = 600                                          # seconds
 DAILY_CAP = int(os.environ.get("DAILY_CAP", "300"))   # questions per day, all visitors
@@ -35,7 +43,7 @@ provider = get_provider()
 
 app = FastAPI(title="Clearance demo API")
 app.add_middleware(CORSMiddleware, allow_origins=ORIGINS,
-                   allow_methods=["GET", "POST"], allow_headers=["content-type"])
+                   allow_methods=["GET", "POST"], allow_headers=["*"])
 
 recent = defaultdict(deque)
 daily = {"day": "", "n": 0}
@@ -64,11 +72,21 @@ class Ask(BaseModel):
 
 @app.get("/health")
 def health():
-    return {"ok": True, "model": getattr(provider, "model", provider.name)}
+    db_ok = False
+    if DSN:
+        try:
+            with psycopg.connect(DSN, connect_timeout=3) as conn, conn.cursor() as cur:
+                cur.execute("SELECT 1")
+                db_ok = True
+        except (psycopg.Error, OSError):
+            db_ok = False
+    return {"ok": True, "database": db_ok, "model": getattr(provider, "model", provider.name)}
 
 
 @app.post("/ask")
 def ask(body: Ask, request: Request):
+    if not DSN:
+        raise HTTPException(503, "Database is not connected.")
     if body.persona not in visible:
         raise HTTPException(400, "Unknown person.")
     ip = request.headers.get("x-forwarded-for", "").split(",")[0].strip() or request.client.host
@@ -95,3 +113,10 @@ def ask(body: Ask, request: Request):
                           "snippet": " ".join(h["text"].split())[:240]} for h in hits],
             }
     return out
+
+
+demo_dir = Path(__file__).resolve().parents[3] / "demo"
+if demo_dir.is_dir() and (demo_dir / "index.html").exists():
+    from fastapi.staticfiles import StaticFiles
+
+    app.mount("/", StaticFiles(directory=str(demo_dir), html=True), name="static")

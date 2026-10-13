@@ -332,7 +332,6 @@ python -m http.server -d demo 8000
 ## Future Improvements
 
 - Build an LLM judge with a hand-labelled set, and report answer quality per retrieval mode
-- Rerun the 400,000-chunk benchmark with a higher `hnsw.max_scan_tuples` and report how prefilter recovers
 - Add hybrid retrieval (full-text + vector) and compare it on restricted users
 - Plug in real authentication (single sign-on tokens) so the API takes the user from a verified identity instead of a demo selector
 - Record a short demo walkthrough of the deployed assistant

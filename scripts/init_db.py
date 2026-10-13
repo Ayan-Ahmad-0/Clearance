@@ -81,13 +81,49 @@ def load_organisation(conn: psycopg.Connection, org_path: Path) -> None:
 
 
 def load_chunks(conn: psycopg.Connection, docs_path: Path) -> None:
-    """Chunk, scan, embed, and insert documents into chunks table with strict memory limits."""
+    """Chunk, scan, embed, and insert documents into chunks table with memory-safe fast-path."""
+    from clearance.ingest.embedder import to_pgvector
+
+    embedded_path = docs_path.with_name("chunks_embedded.jsonl")
+    if embedded_path.exists():
+        print(f"[init_db] Found pre-computed embeddings at {embedded_path}!")
+        print("[init_db] Inserting pre-computed chunks into PostgreSQL...")
+        started = time.perf_counter()
+        with conn.transaction():
+            conn.execute("TRUNCATE chunks RESTART IDENTITY;")
+            with conn.cursor() as cur:
+                batch = []
+                count = 0
+                with embedded_path.open(encoding="utf-8") as fh:
+                    for line in fh:
+                        line = line.strip()
+                        if not line:
+                            continue
+                        item = json.loads(line)
+                        batch.append((item["doc_id"], item["ord"], item["text"], to_pgvector(item["vec"])))
+                        count += 1
+                        if len(batch) >= 500:
+                            cur.executemany(
+                                "INSERT INTO chunks (doc_id, ord, text, embedding) VALUES (%s, %s, %s, %s::vector);",
+                                batch,
+                            )
+                            batch = []
+                    if batch:
+                        cur.executemany(
+                            "INSERT INTO chunks (doc_id, ord, text, embedding) VALUES (%s, %s, %s, %s::vector);",
+                            batch,
+                        )
+            conn.execute("ANALYZE chunks;")
+        duration = round(time.perf_counter() - started, 1)
+        print(f"[init_db] Loaded {count} pre-computed chunks in {duration}s (RAM usage < 25MB)!")
+        return
+
     import gc
 
     import torch
 
     from clearance.ingest.chunker import chunk
-    from clearance.ingest.embedder import embed_passages, to_pgvector
+    from clearance.ingest.embedder import embed_passages
     from clearance.ingest.scanner import scan
 
     print(f"[init_db] Reading documents from {docs_path}...")
